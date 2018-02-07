@@ -2,46 +2,61 @@
 <html lang="en-eu">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Adrian</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian Basic Portfolio</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+    
     <!-- This is the navbar -->
-    <nav>
-        <div class="wrapper">
-            <h1>Adrian Fernandez</h1>
-            <ul>
+    
+    <nav class="col-12">
+        <div class="container">
+            <div class="row">
+                <h1 class="col-4">Adrian Fernandez</h1>
+                <ul class="col-4">
                 <li><a href="index.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li id="last"><a href="#">Contact</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li id="last"><a href="contact.html">Contact</a></li>
             </ul>
-        </div>    
+            </div>
+        </div>
     </nav>
-    <!-- This is the wrapper -->
-    <div class="wrapper">
-        <section  class="clearfix">
-            <h2>Drop me a Hi</h2>
-            <form>
-                <label>Name</label>
-                <input type="text" name="name">
-                <label>Email</label>
-                <input type="email" name="email">
-                <label>Message</label>
-                <textarea name="message" rows="10" cols="30">Feel free to comment.</textarea>
-                <input type="submit">
-            </form>
-        </section>
-        <aside>
-            <h3>Connect with me</h3>
-            <a class="github" href="https://github.com/coafer"></a>
-            <a class="linkedin"></a>
-            <a class="stack"></a>
-        </aside>
-    </div>
+    
+    <!-- This is the form -->
+    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-8 col-mx-8 main">
+                    <h2>Drop me a Hi</h2>
+                    <div class="row">
+                        <form>
+                            <label>Name</label>
+                            <input type="text" name="name">
+                            <label>Email</label>
+                            <input type="email" name="email">
+                            <label>Message</label>
+                            <textarea name="message" rows="10" cols="30">Feel free to comment.</textarea>
+                            <input type="submit">
+                        </form>
+                    </div>
+                </div>
+                <aside class="col-3 col-mx-4">
+                    <h3>Connect with me</h3>
+                    <a class="github" href="https://github.com/coafer"></a>
+                    <a class="linkedin"></a>
+                    <a class="stack"></a>
+                </aside>
+            </div>
+        </div>    
+    </section>
+    
     <!-- This is the footer -->
+    
     <footer>
-        <div class="wrapper">
+        <div class="container">
             <p>© Copyright 2018 Adrian Fernandez</p>
         </div>
     </footer>

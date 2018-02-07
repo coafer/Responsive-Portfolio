@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     font: normal normal 1em/1.6em Arial, Helvetica, sans-serif;
     background:#b8ecfd url("../images/hello.png") no-repeat bottom;
@@ -5,43 +9,129 @@ body{
     height: 100vh;
 }
 
-.wrapper{
+@media only screen and (max-width: 768px) {
+/*     For mobile phones: */
+    body{
+        height: auto;
+        background-image: none;
+    }
+}
+
+.container{
     width: 980px;
     margin:  0 auto;
 }
 
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .container{
+        width: auto;
+        height: auto;
+    }
+}
+
+/*
 .clearfix::after{
     content: "";
     display: block;
     clear: both;
 }
+*/
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 1024px) {
+    /* For irregular: */
+    .col-md-1 {width: 8.33%;}
+    .col-md-2 {width: 16.66%;}
+    .col-md-3 {width: 25%;}
+    .col-md-4 {width: 33.33%; margin-bottom: 10px}
+    .col-md-5 {width: 41.66%;}
+    .col-md-6 {width: 50%;}
+    .col-md-7 {width: 58.33%;}
+    .col-md-8 {width: 66.66%;}
+    .col-md-9 {width: 75%;}
+    .col-md-10 {width: 83.33%;}
+    .col-md-11 {width: 91.66%;}
+    .col-md-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%; margin-bottom: 10px}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+
+
 
 /*Nav starts here------------------------------------------*/
+
 
 nav{
     background-color: #b8ecfd;
     display: block;
     border-bottom: 1px solid #FC626B;
-    height: 74px;
+    height: 75px;
 }
+
 
 nav h1{
     display: block;
-    height: 50px;
-    font-size: 2em;
+    height: 75px;
+    font-size: 1.9em;
+    text-align: center;
+    padding-top: 25px;
     color: #FC626B;
     float: left;
     background: url("../images/cross.png") padding-box no-repeat left; 
     background-size: 30px;
     border-bottom: 4px solid #FC626B;
-/*    border: 1px solid #778bd4;*/
-    padding: 20px 40px 0 40px;
 }
 
 nav ul{
     float: right;
     padding: 20px;
 }
+
+
 
 nav ul li{
     display: inline;
@@ -59,21 +149,35 @@ nav ul li a{
     border: 0;
 }
 
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    nav{
+        height: auto;
+    }
+    nav h1{
+        border-bottom: 0px;
+        background-position: 20px;
+    }
+    nav ul{
+        text-align: center;
+    }
+}
+
 /*Section starts here------------------------------------------*/
 
-section, aside{
-    margin-top: 40px;
-    padding: 25px;
-}
-
 section{
-    width: 60%;
-    float: left;
-    border: 5px solid #FC626B;
+    margin-top: 40px;
 }
 
-section h2{
+.main{
+    border: 5px solid #FC626B;
+    padding: 20px;
+    display: inline-block;
+}
+
+h2{
     font-size: 1.8em;
+    line-height: 1.2em;
     color: #FC626B;
     display: block;
     border-bottom: 2px solid #FC626B;
@@ -90,12 +194,30 @@ section img{
     float: left;
     margin-right: 20px;
     margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    section img{
+        max-height: auto;
+        max-width: 263px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    section img{
+        max-width: 200px;
+        margin-right: 20px;
+        float: none;
+    }
 }
 
 /*Sidebar starts here------------------------------------------*/
 
 aside{
-    width: 25%;
     float: right;
 }
 
@@ -125,6 +247,14 @@ aside h3{
     border-bottom: 1px solid #FC626B;
     padding-bottom: 20px;
     margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    aside{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
 }
 
 /*Form starts here------------------------------------------*/
@@ -178,6 +308,8 @@ input:focus {
     height: 21vh;
     margin-top: 20px;
     position: relative;
+    float: left;
+    display: inline;
 }
 
 .titles, .print{
@@ -192,12 +324,12 @@ input:focus {
 
 .titles, .illustration{
     background: #FC626B url("../images/illustrations.png") padding-box no-repeat center; 
-    background-size: 320px;
+    background-size: cover;
 }
 
 .titles, .pack{
     background: #FC626B url("../images/packaging.jpg") padding-box no-repeat bottom; 
-    background-size: 350px;
+    background-size: cover;
 }
 
 .col-l{
@@ -227,6 +359,13 @@ input:focus {
     text-decoration: none;
 }
 
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .col-l, .col-r{
+        width: 100%;
+    }
+}
+
 
 /*Footer starts here------------------------------------------*/
 
@@ -246,4 +385,12 @@ footer p{
     width: 100%;
     text-align: center;
     padding: 20px 0;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    footer{
+        position: relative;
+    }
 }
